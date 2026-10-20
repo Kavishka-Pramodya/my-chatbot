@@ -64,8 +64,8 @@ def chat(data: ChatMessage):
         answer = "You can contact us via email at contact@mychatbot.com or call/WhatsApp at +94 77 123 4567. We'd love to chat!"
     
     # About / Who are you
-    elif any(abt in question for abt in ["who are you", "what is this", "oyaa kawda", "about you", "ai assistant"]):
-        answer = "I am an intelligent virtual assistant designed to assist you with quick answers and guide you through our services! 🤖"
+    elif any(abt in question for abt in ["who are you", "what is this", "oyaa kawda", "about you", "ai assistant", "your name"]):
+        answer = "I am Sync AI, an intelligent virtual assistant designed to assist you with quick answers and guide you through our services! 🤖"
     
     # Help
     elif any(hlp in question for hlp in ["help", "udaw", "support", "assist"]):
