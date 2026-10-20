@@ -86,7 +86,27 @@ def chat(data: ChatMessage):
         answer = "📄 You can download Pramodya's complete Resume/CV directly from the '#resume' section on this portfolio, or email him at kavishkapramodya2004@gmail.com for a direct copy."
 
     # ---------------------------------------------------------
-    # 3. HIRING / INTERNSHIPS / FREELANCE / AVAILABILITY
+    # 3. SERVICES OFFERED / FREELANCE
+    # ---------------------------------------------------------
+    elif match_any(question, [
+        "services", "service", "what services", "what do you offer", "what services do you offer",
+        "what services do you provide", "what do you do", "offer", "freelance services",
+        "what can you build", "services offered", "services monawada", "monawada karanne",
+        "web hadanna", "software hadanna", "post design", "chatbot hadanna"
+    ]):
+        answer = (
+            "Pramodya offers a versatile range of freelance & software services, including:\n"
+            "• 🌐 Full-Stack Web Development (Custom business sites, portfolios & web apps)\n"
+            "• 💻 Custom Software Development (Tailored software & system solutions)\n"
+            "• 🤖 AI & Interactive Chatbot Integration (For customer engagement & websites)\n"
+            "• 📱 Android Mobile App Development\n"
+            "• 🎨 UI/UX & Graphic/Post Designing (Branding & social media creatives)\n"
+            "• 🔌 IoT & Embedded Systems Prototyping\n\n"
+            "Have a project in mind? Contact Pramodya at kavishkapramodya2004@gmail.com to discuss your requirements!"
+        )
+
+    # ---------------------------------------------------------
+    # 4. HIRING / INTERNSHIPS / FREELANCE / AVAILABILITY
     # ---------------------------------------------------------
     elif match_any(question, ["hire", "hiring", "intern", "internship", "internships", "job", "vacancy", "available", "recruit", "freelance", "contract", "work with", "wadata ganna"]):
         answer = "Pramodya is actively available for Software Engineering & Embedded Systems Internships, Junior Developer roles, and freelance projects! 💼 Feel free to email him at kavishkapramodya2004@gmail.com or connect via LinkedIn: https://www.linkedin.com/in/kavishka-pramodya-9bb5b933b/"
