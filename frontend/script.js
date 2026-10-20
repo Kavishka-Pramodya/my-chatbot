@@ -190,15 +190,16 @@ clearChatBtn.addEventListener("click", () => {
         chatMessages.innerHTML = `
             <div class="message bot-message">
                 <div class="message-content">
-                    Conversation cleared. How can I help you today?
+                    Conversation reset. I'm <strong>Sync AI</strong>, personal assistant to Pramodya. What would you like to know?
                 </div>
                 <span class="message-time">${formatCurrentTime()}</span>
             </div>
             <div class="suggestion-chips" id="suggestionChips">
-                <button type="button" class="chip" data-prompt="Hello!">👋 Say Hello</button>
-                <button type="button" class="chip" data-prompt="What services do you provide?">🚀 Services</button>
-                <button type="button" class="chip" data-prompt="How much does it cost?">💰 Pricing</button>
-                <button type="button" class="chip" data-prompt="How can I contact you?">📞 Contact</button>
+                <button type="button" class="chip" data-prompt="Who is Pramodya?">👨‍💻 About Pramodya</button>
+                <button type="button" class="chip" data-prompt="Tell me about your featured projects.">🚀 Key Projects</button>
+                <button type="button" class="chip" data-prompt="What are Pramodya's technical skills?">🛠️ Tech Skills</button>
+                <button type="button" class="chip" data-prompt="Are you available for internships or hiring?">💼 Hire / Intern</button>
+                <button type="button" class="chip" data-prompt="How can I contact Pramodya?">📬 Contact</button>
             </div>
         `;
         attachChipListeners();
