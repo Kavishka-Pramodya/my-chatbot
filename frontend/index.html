@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Assistant | Interactive Chatbot</title>
+    <meta name="description" content="AI Smart Assistant providing instant answers, web development services, pricing, and 24/7 automated support.">
+    
+    <!-- Modern Typography: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient background glow elements -->
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+    <div class="chat-wrapper">
+        <main class="chat-container" id="chatbotApp">
+            
+            <!-- Chatbot Header -->
+            <header class="chat-header">
+                <div class="header-bot-info">
+                    <div class="avatar-wrapper">
+                        <div class="bot-avatar">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+                                <rect x="3" y="8" width="18" height="12" rx="4"/>
+                                <line x1="9" y1="13" x2="9.01" y2="13" stroke-width="3"/>
+                                <line x1="15" y1="13" x2="15.01" y2="13" stroke-width="3"/>
+                                <path d="M9 17h6"/>
+                            </svg>
+                        </div>
+                        <span class="status-indicator" id="statusDot" title="Online"></span>
+                    </div>
+                    <div class="header-text">
+                        <h1 class="header-title">
+                            Nova AI
+                            <span class="verified-badge" title="Official Virtual Assistant">
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </span>
+                        </h1>
+                        <p class="header-status" id="headerStatusText">Online • Ready to assist</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button type="button" class="action-btn" id="clearChatBtn" title="Clear conversation" aria-label="Clear conversation">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Backend Connection Alert Banner (hidden by default) -->
+            <div class="connection-banner" id="connectionBanner" style="display: none;">
+                <span class="warning-icon">⚠️</span>
+                <span id="connectionBannerText">Backend is offline. Please start the server.</span>
+                <button type="button" id="retryConnectionBtn" class="retry-btn">Retry</button>
+            </div>
+
+            <!-- Messages Stream Area -->
+            <section class="chat-messages" id="chatMessages" aria-live="polite">
+                <!-- Welcome Bot Card -->
+                <div class="message bot-message" data-timestamp="now">
+                    <div class="message-content">
+                        Hello! 👋 I'm your interactive AI assistant. How can I help you today?
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+
+                <!-- Quick Prompt Suggestions -->
+                <div class="suggestion-chips" id="suggestionChips">
+                    <button type="button" class="chip" data-prompt="Hello!">👋 Say Hello</button>
+                    <button type="button" class="chip" data-prompt="What services do you provide?">🚀 Services</button>
+                    <button type="button" class="chip" data-prompt="How much does it cost?">💰 Pricing</button>
+                    <button type="button" class="chip" data-prompt="How can I contact you?">📞 Contact</button>
+                </div>
+            </section>
+
+            <!-- Typing Indicator (dynamically shown during request) -->
+            <div class="typing-indicator-container" id="typingIndicator" style="display: none;">
+                <div class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <span class="typing-text">Nova is thinking...</span>
+            </div>
+
+            <!-- Message Input Area -->
+            <footer class="chat-input-area">
+                <form id="chatForm" class="chat-input-form" onsubmit="return false;">
+                    <div class="input-container">
+                        <input
+                            type="text"
+                            id="messageInput"
+                            placeholder="Ask a question or type a message..."
+                            autocomplete="off"
+                            aria-label="Your message"
+                            maxlength="500"
+                        />
+                        <button type="submit" id="sendButton" aria-label="Send message">
+                            <span class="btn-text">Send</span>
+                            <svg class="send-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="input-footer">
+                    <span>Press <kbd>Enter ↵</kbd> to send</span>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
