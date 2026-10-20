@@ -156,7 +156,22 @@ def chat(data: ChatMessage):
         answer = "Pramodya is currently an undergraduate pursuing his Bachelor's Degree in Information Systems at the University of Colombo School of Computing (UCSC) 🎓."
 
     # ---------------------------------------------------------
-    # 8. ABOUT PRAMODYA RATHNAYAKA
+    # 8. CURRENT FOCUS / LEARNING / WORKING ON (FIVERR & AI CHATBOTS)
+    # ---------------------------------------------------------
+    elif match_any(question, [
+        "what are you currently learning or working on", "what are you currently learning",
+        "what are you currently working on", "currently learning", "currently working on",
+        "what are you learning", "what are you working on", "what are you doing now",
+        "current focus", "learning now", "working on now", "fiverr", "freelancing",
+        "dan monawada karanne", "dan mokada karanne", "igena ganne monawada"
+    ]):
+        answer = (
+            "Currently, Pramodya is actively mastering AI Chatbot development—specializing in how to build and deliver cutting-edge AI Chatbot solutions on freelancing platforms like Fiverr 🚀.\n\n"
+            "Alongside his Information Systems degree at UCSC, he is deeply exploring conversational AI architectures, custom API integrations, and practical automation tools for international clients!"
+        )
+
+    # ---------------------------------------------------------
+    # 9. ABOUT PRAMODYA RATHNAYAKA
     # ---------------------------------------------------------
     elif match_any(question, ["who is pramodya", "who is kavishka", "about pramodya", "about him", "tell me about", "introduce", "kawda pramodya", "pramodya kawda", "pramodya gana", "who is he"]):
         answer = "Pramodya Rathnayaka (Kavishka Pramodya) is an Information Systems undergraduate at UCSC (University of Colombo School of Computing) and Robotics & Embedded Systems enthusiast based in Sri Lanka. He builds practical full-stack applications, mobile apps, and autonomous robotics hardware."
