@@ -110,10 +110,21 @@ def chat(data: ChatMessage):
         answer = "You can easily connect with Pramodya via:\n• 📧 Email: kavishkapramodya2004@gmail.com\n• 💼 LinkedIn: https://www.linkedin.com/in/kavishka-pramodya-9bb5b933b/\n• 🐙 GitHub: https://github.com/Kavishka-Pramodya\nHe looks forward to speaking with you!"
 
     # ---------------------------------------------------------
-    # 7. ABOUT PRAMODYA RATHNAYAKA
+    # 7. EDUCATION / UNIVERSITY / DEGREE
+    # ---------------------------------------------------------
+    elif match_any(question, [
+        "where do you study", "where does pramodya study", "where does he study",
+        "where do they study", "study", "studying", "university", "campus", "degree",
+        "education", "undergraduate", "ucsc", "colombo school of computing",
+        "college", "academic", "koheda igena ganne", "mona campus", "degree eka"
+    ]):
+        answer = "Pramodya is currently an undergraduate pursuing his Bachelor's Degree in Information Systems at the University of Colombo School of Computing (UCSC) 🎓."
+
+    # ---------------------------------------------------------
+    # 8. ABOUT PRAMODYA RATHNAYAKA
     # ---------------------------------------------------------
     elif match_any(question, ["who is pramodya", "who is kavishka", "about pramodya", "about him", "tell me about", "introduce", "kawda pramodya", "pramodya kawda", "pramodya gana", "who is he"]):
-        answer = "Pramodya Rathnayaka (Kavishka Pramodya) is an Information Systems undergraduate and Robotics & Embedded Systems enthusiast based in Sri Lanka. He builds practical full-stack applications, mobile apps, and autonomous robotics hardware."
+        answer = "Pramodya Rathnayaka (Kavishka Pramodya) is an Information Systems undergraduate at UCSC (University of Colombo School of Computing) and Robotics & Embedded Systems enthusiast based in Sri Lanka. He builds practical full-stack applications, mobile apps, and autonomous robotics hardware."
 
     # ---------------------------------------------------------
     # 8. ABOUT SYNC AI (BOT IDENTITY)
