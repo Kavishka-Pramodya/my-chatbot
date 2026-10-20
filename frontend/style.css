@@ -588,3 +588,103 @@ body {
         padding: 9px 12px;
     }
 }
+
+
+/* ==========================================================================
+   Light Mode Theme Overrides (Auto-synced with Portfolio Light Theme)
+   ========================================================================== */
+html.light {
+    --bg-main: #f0f4f8;
+    --card-bg: rgba(255, 255, 255, 0.94);
+    --card-border: rgba(226, 232, 240, 0.85);
+    --header-bg: rgba(248, 250, 252, 0.96);
+    
+    /* Brand Gradients & Accents (Sky Blue) */
+    --primary-gradient: linear-gradient(135deg, #0284c7 0%, #0ea5e9 60%, #38bdf8 100%);
+    --primary-hover: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+    --accent-glow: rgba(14, 165, 233, 0.20);
+    
+    /* Message Bubble Colors */
+    --user-msg-bg: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+    --user-msg-color: #ffffff;
+    --bot-msg-bg: #eef2f6;
+    --bot-msg-border: #e2e8f0;
+    --bot-msg-color: #0f172a;
+
+    /* Text Colors */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    /* Status & Alerts */
+    --warning-bg: rgba(239, 68, 68, 0.08);
+    --warning-border: rgba(239, 68, 68, 0.25);
+    --warning-text: #b91c1c;
+}
+
+html.light .chip {
+    background: #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+}
+
+html.light .chip:hover {
+    background: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+html.light .chat-input-area {
+    background: rgba(248, 250, 252, 0.96) !important;
+    border-top: 1px solid rgba(226, 232, 240, 0.85) !important;
+}
+
+html.light #messageInput {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+html.light #messageInput:focus {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
+}
+
+html.light .input-footer {
+    color: #64748b !important;
+}
+
+html.light .action-btn {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: #64748b !important;
+}
+
+html.light .action-btn:hover {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #0284c7 !important;
+}
+
+/* ==========================================================================
+   Clean Embed Styling for Iframe
+   ========================================================================== */
+@media (max-width: 500px), (max-height: 800px) {
+    body {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+    .bg-glow {
+        display: none !important;
+    }
+    .chat-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+    }
+    .chat-container {
+        height: 100vh !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}

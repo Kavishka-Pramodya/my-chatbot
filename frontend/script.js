@@ -230,3 +230,30 @@ window.addEventListener("DOMContentLoaded", () => {
     checkBackendHealth();
     messageInput.focus();
 });
+
+
+// ==========================================================================
+// Portfolio Theme Synchronizer (postMessage & URL Query Param)
+// ==========================================================================
+function applyChatbotTheme(theme) {
+    if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+    } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    }
+}
+
+// 1. Initial check from URL parameter (?theme=light or ?theme=dark)
+const initialThemeParam = new URLSearchParams(window.location.search).get('theme');
+if (initialThemeParam) {
+    applyChatbotTheme(initialThemeParam);
+}
+
+// 2. Real-time message listener from parent portfolio window
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'THEME_CHANGE') {
+        applyChatbotTheme(event.data.theme);
+    }
+});
