@@ -113,7 +113,7 @@ def chat(data: ChatMessage):
     # 7. ABOUT PRAMODYA RATHNAYAKA
     # ---------------------------------------------------------
     elif match_any(question, ["who is pramodya", "who is kavishka", "about pramodya", "about him", "tell me about", "introduce", "kawda pramodya", "pramodya kawda", "pramodya gana", "who is he"]):
-        answer = "Pramodya Rathnayaka (Kavishka Pramodya) is an Information Systems undergraduate, Software Engineer, and Robotics & Embedded Systems enthusiast based in Sri Lanka. He builds practical full-stack applications, mobile apps, and autonomous robotics hardware."
+        answer = "Pramodya Rathnayaka (Kavishka Pramodya) is an Information Systems undergraduate and Robotics & Embedded Systems enthusiast based in Sri Lanka. He builds practical full-stack applications, mobile apps, and autonomous robotics hardware."
 
     # ---------------------------------------------------------
     # 8. ABOUT SYNC AI (BOT IDENTITY)
