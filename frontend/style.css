@@ -475,28 +475,33 @@ body {
 .input-container {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 6px 8px 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    padding: 4px 6px 4px 18px;
     transition: var(--transition);
+    width: 100%;
 }
 
 .input-container:focus-within {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
-    background: rgba(0, 0, 0, 0.4);
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    background: rgba(0, 0, 0, 0.35);
 }
 
 #messageInput {
     flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
     color: var(--text-primary);
-    font-size: 14.5px;
+    font-size: 14px;
     font-family: inherit;
     min-width: 0;
+    padding: 8px 6px 8px 0 !important;
+    margin: 0 !important;
+    line-height: 1.4;
 }
 
 #messageInput::placeholder {
@@ -504,19 +509,31 @@ body {
 }
 
 #sendButton {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    border-radius: 50%;
     background: var(--primary-gradient);
     border: none;
     color: white;
-    border-radius: 12px;
-    padding: 9px 16px;
-    font-size: 14px;
-    font-weight: 600;
+    padding: 0;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
     transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+    flex-shrink: 0;
+}
+
+#sendButton .btn-text {
+    display: none !important;
+}
+
+#sendButton .send-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 1px;
 }
 
 #sendButton:hover:not(:disabled) {
@@ -638,15 +655,33 @@ html.light .chat-input-area {
     border-top: 1px solid rgba(226, 232, 240, 0.85) !important;
 }
 
-html.light #messageInput {
+html.light .input-container {
     background: #ffffff !important;
-    border-color: #cbd5e1 !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .input-container:focus-within {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
+    background: #ffffff !important;
+}
+
+html.light #messageInput {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
     color: #0f172a !important;
 }
 
-html.light #messageInput:focus {
-    border-color: #0284c7 !important;
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
+html.light #messageInput::placeholder {
+    color: #94a3b8 !important;
+}
+
+html.light #sendButton {
+    background: var(--primary-gradient) !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35) !important;
 }
 
 html.light .input-footer {
