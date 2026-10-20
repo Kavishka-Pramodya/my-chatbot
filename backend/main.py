@@ -106,7 +106,22 @@ def chat(data: ChatMessage):
         )
 
     # ---------------------------------------------------------
-    # 4. HIRING / INTERNSHIPS / FREELANCE / AVAILABILITY
+    # 4. PRICING / RATES / CHARGING / QUOTATION
+    # ---------------------------------------------------------
+    elif match_any(question, [
+        "how much do you charge", "how much", "how much does it cost", "charge",
+        "charging", "price", "pricing", "rates", "cost", "costing", "quote",
+        "quotation", "budget", "fees", "fee", "gaana", "gana keeyada", "mudal", "mila"
+    ]):
+        answer = (
+            "Pramodya's pricing is flexible, competitive, and tailored to the scope and requirements of each project:\n"
+            "• 💼 Project-based: Fixed pricing based on deliverables (Websites, Apps, Chatbots, Designs)\n"
+            "• ⏱️ Hourly / Milestone rates: For ongoing development and maintenance\n\n"
+            "To get an accurate estimate or free consultation, feel free to reach out to Pramodya at kavishkapramodya2004@gmail.com with your project details!"
+        )
+
+    # ---------------------------------------------------------
+    # 5. HIRING / INTERNSHIPS / FREELANCE / AVAILABILITY
     # ---------------------------------------------------------
     elif match_any(question, ["hire", "hiring", "intern", "internship", "internships", "job", "vacancy", "available", "recruit", "freelance", "contract", "work with", "wadata ganna"]):
         answer = "Pramodya is actively available for Software Engineering & Embedded Systems Internships, Junior Developer roles, and freelance projects! 💼 Feel free to email him at kavishkapramodya2004@gmail.com or connect via LinkedIn: https://www.linkedin.com/in/kavishka-pramodya-9bb5b933b/"
